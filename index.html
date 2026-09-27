@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mistwalk — Privacy Policy / Политика конфиденциальности</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #0c1a1d;
+    --fg: #eef3f2;
+    --muted: #9db3ae;
+    --accent: #6fd6c4;
+    --card: #12262a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  h1 { font-size: 1.5rem; margin: 0; }
+  .lang-toggle { display: flex; gap: 8px; }
+  .lang-toggle button {
+    background: var(--card);
+    color: var(--fg);
+    border: 1px solid #234;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .lang-toggle button.active { background: var(--accent); color: #06201c; border-color: var(--accent); font-weight: 600; }
+  h2 { font-size: 1.15rem; margin-top: 2em; color: var(--accent); }
+  p, li { color: var(--fg); }
+  ul { padding-left: 1.2em; }
+  .muted { color: var(--muted); font-size: 0.9rem; }
+  a { color: var(--accent); }
+  [data-lang] { display: none; }
+  [data-lang].active { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Mistwalk</h1>
+    <div class="lang-toggle">
+      <button id="btn-ru" class="active" onclick="setLang('ru')">Русский</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <div data-lang="ru" class="active">
+    <h1 style="font-size:1.3rem;">Политика конфиденциальности</h1>
+    <p class="muted">Дата вступления в силу: 27 сентября 2026 г.</p>
+
+    <p>Это приложение Mistwalk («мы», «приложение»). Разработчик — quelerir. Эта политика описывает, какие данные приложение собирает, зачем и как ими распорядиться.</p>
+
+    <h2>Какие данные мы собираем</h2>
+    <ul>
+      <li><strong>Данные аккаунта</strong> — email, пароль, имя, фамилия и логин при регистрации.</li>
+      <li><strong>Геолокация</strong> — точные координаты вашего местоположения, в том числе когда приложение свёрнуто (фоновая геолокация). Это ядро механики приложения: оно «открывает туман» на карте по мере вашего перемещения и считает пройденное расстояние, посещённые страны и города.</li>
+      <li><strong>Фотография профиля</strong> — если вы загружаете аватар, он сохраняется на сервере и становится доступен по прямой ссылке (в том числе другим пользователям, если ваш профиль публичный).</li>
+      <li><strong>Данные профиля и активности</strong> — отображаемое имя, статистика находок, список подписок и подписчиков, лента активности, место в таблице лидеров.</li>
+      <li><strong>Технические данные</strong> — локальные настройки приложения (например, включена ли офлайн-карта) хранятся только на вашем устройстве.</li>
+    </ul>
+    <p>Мы не используем сторонние рекламные или аналитические SDK. Все данные обрабатываются нашим бэкендом на базе Supabase.</p>
+
+    <h2>Зачем нужна фоновая геолокация</h2>
+    <p>Основная механика Mistwalk — открывать карту мира по мере реального перемещения, в том числе пока телефон лежит в кармане. Без доступа к геолокации в фоне приложение не может фиксировать пройденный путь, если экран выключен или вы пользуетесь другим приложением. Вы можете в любой момент отозвать разрешение на геолокацию в настройках устройства — в этом случае функции отслеживания перестанут работать.</p>
+
+    <h2>Публичность профиля</h2>
+    <p>По умолчанию профиль публичный: другие пользователи могут видеть ваше отображаемое имя, аватар и статистику находок, подписываться на вас и видеть вас в общем рейтинге. Вы можете сделать профиль приватным в настройках приложения.</p>
+
+    <h2>С кем мы делимся данными</h2>
+    <p>Мы не продаём ваши данные. Данные хранятся и обрабатываются у нашего инфраструктурного провайдера Supabase (хостинг базы данных, аутентификации и файлового хранилища). Мы не передаём данные рекламным сетям или аналитическим сервисам.</p>
+
+    <h2>Хранение и удаление данных</h2>
+    <p>Данные хранятся, пока у вас есть аккаунт. Чтобы удалить аккаунт и все связанные с ним данные (историю посещений, профиль, аватар), напишите на <a href="mailto:quelerir@gmail.com">quelerir@gmail.com</a> — мы удалим их в разумный срок.</p>
+
+    <h2>Дети</h2>
+    <p>Приложение не предназначено для детей младше 13 лет, и мы сознательно не собираем данные таких пользователей.</p>
+
+    <h2>Безопасность</h2>
+    <p>Мы применяем стандартные технические меры (шифрование соединения, разграничение доступа на уровне базы данных) для защиты ваших данных, но не можем гарантировать абсолютную безопасность при передаче данных через интернет.</p>
+
+    <h2>Изменения политики</h2>
+    <p>Мы можем обновлять эту политику. Актуальная версия всегда доступна по этой ссылке.</p>
+
+    <h2>Контакты</h2>
+    <p>По любым вопросам о данных пишите на <a href="mailto:quelerir@gmail.com">quelerir@gmail.com</a>.</p>
+  </div>
+
+  <div data-lang="en">
+    <h1 style="font-size:1.3rem;">Privacy Policy</h1>
+    <p class="muted">Effective date: September 27, 2026</p>
+
+    <p>This is the privacy policy for Mistwalk ("we", "the app"), developed by quelerir. It explains what data the app collects, why, and how you can control it.</p>
+
+    <h2>What we collect</h2>
+    <ul>
+      <li><strong>Account data</strong> — email, password, first name, last name, and username provided at sign-up.</li>
+      <li><strong>Location</strong> — precise location data, including while the app is running in the background. This powers the app's core mechanic: revealing the map as you physically move, and tracking distance travelled, countries and cities visited.</li>
+      <li><strong>Profile photo</strong> — if you upload an avatar, it is stored on our server and accessible via a direct link (including to other users if your profile is public).</li>
+      <li><strong>Profile and activity data</strong> — display name, discovery statistics, followers/following lists, activity feed, and leaderboard ranking.</li>
+      <li><strong>Local device data</strong> — local app settings (e.g. whether offline maps are enabled) are stored only on your device.</li>
+    </ul>
+    <p>We do not use third-party advertising or analytics SDKs. All data is processed by our backend, built on Supabase.</p>
+
+    <h2>Why we need background location</h2>
+    <p>Mistwalk's core mechanic is revealing the world map as you actually travel, including while your phone is in your pocket. Without background location access, the app cannot record your path while the screen is off or another app is in use. You can revoke location permission at any time in your device settings; tracking features will stop working if you do.</p>
+
+    <h2>Public profile</h2>
+    <p>By default your profile is public: other users can see your display name, avatar, and discovery statistics, follow you, and see you on the leaderboard. You can make your profile private in the app's settings.</p>
+
+    <h2>Who we share data with</h2>
+    <p>We do not sell your data. Data is stored and processed by our infrastructure provider, Supabase (database, authentication, and file storage hosting). We do not share data with advertising networks or analytics services.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>Data is retained for as long as you have an account. To delete your account and all associated data (visit history, profile, avatar), email <a href="mailto:quelerir@gmail.com">quelerir@gmail.com</a> and we will remove it within a reasonable time.</p>
+
+    <h2>Children</h2>
+    <p>The app is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+    <h2>Security</h2>
+    <p>We use standard technical measures (encrypted connections, database-level access control) to protect your data, but no method of transmission over the internet is completely secure.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. The current version is always available at this link.</p>
+
+    <h2>Contact</h2>
+    <p>For any questions about your data, email <a href="mailto:quelerir@gmail.com">quelerir@gmail.com</a>.</p>
+  </div>
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('mistwalk-privacy-lang', lang); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('mistwalk-privacy-lang'); } catch (e) {}
+    if (saved) setLang(saved);
+  })();
+</script>
+</body>
+</html>
