@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mistwalk — Support / Поддержка</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #0c1a1d;
+    --fg: #eef3f2;
+    --muted: #9db3ae;
+    --accent: #6fd6c4;
+    --card: #12262a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.55;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  h1 { font-size: 1.5rem; margin: 0; }
+  .lang-toggle { display: flex; gap: 8px; }
+  .lang-toggle button {
+    background: var(--card);
+    color: var(--fg);
+    border: 1px solid #234;
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .lang-toggle button.active { background: var(--accent); color: #06201c; border-color: var(--accent); font-weight: 600; }
+  h2 { font-size: 1.15rem; margin-top: 2em; color: var(--accent); }
+  p, li { color: var(--fg); }
+  ul { padding-left: 1.2em; }
+  .muted { color: var(--muted); font-size: 0.9rem; }
+  a { color: var(--accent); }
+  [data-lang] { display: none; }
+  [data-lang].active { display: block; }
+  .card { background: var(--card); border-radius: 12px; padding: 16px 20px; margin: 1.2em 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Mistwalk</h1>
+    <div class="lang-toggle">
+      <button id="btn-ru" class="active" onclick="setLang('ru')">Русский</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <div data-lang="ru" class="active">
+    <h1 style="font-size:1.3rem;">Поддержка</h1>
+    <p class="muted"><a href="index.html">Политика конфиденциальности</a> · <a href="terms.html">Условия использования</a></p>
+
+    <p>Если у вас возникли вопросы, проблема в работе приложения Mistwalk или предложение — напишите нам.</p>
+
+    <div class="card">
+      <strong>Email поддержки:</strong> <a href="mailto:quelerir@gmail.com">quelerir@gmail.com</a>
+    </div>
+
+    <h2>Частые вопросы</h2>
+    <ul>
+      <li><strong>Как удалить аккаунт?</strong> — в приложении: Меню → Аккаунт → «Удалить аккаунт». Действие необратимо и удаляет все данные сразу.</li>
+      <li><strong>Почему приложению нужна геолокация в фоне?</strong> — это основа механики: карта открывается по мере вашего реального перемещения, даже когда телефон лежит в кармане. Подробнее — в <a href="index.html">политике конфиденциальности</a>.</li>
+      <li><strong>Как сделать профиль приватным?</strong> — в настройках профиля внутри приложения.</li>
+      <li><strong>Нашли ошибку или у вас есть предложение?</strong> — опишите её на email выше, мы отвечаем в течение нескольких дней.</li>
+    </ul>
+  </div>
+
+  <div data-lang="en">
+    <h1 style="font-size:1.3rem;">Support</h1>
+    <p class="muted"><a href="index.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+
+    <p>If you have a question, run into an issue with Mistwalk, or want to suggest something, get in touch.</p>
+
+    <div class="card">
+      <strong>Support email:</strong> <a href="mailto:quelerir@gmail.com">quelerir@gmail.com</a>
+    </div>
+
+    <h2>FAQ</h2>
+    <ul>
+      <li><strong>How do I delete my account?</strong> — in the app: Menu → Account → "Delete account". This is permanent and deletes all your data immediately.</li>
+      <li><strong>Why does the app need background location?</strong> — it's core to the app's mechanic: the map reveals as you physically move, even while your phone is in your pocket. See the <a href="index.html">privacy policy</a> for details.</li>
+      <li><strong>How do I make my profile private?</strong> — in the app's profile settings.</li>
+      <li><strong>Found a bug or have a suggestion?</strong> — email us at the address above, we typically reply within a few days.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    try { localStorage.setItem('mistwalk-privacy-lang', lang); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('mistwalk-privacy-lang'); } catch (e) {}
+    if (saved) setLang(saved);
+  })();
+</script>
+</body>
+</html>
